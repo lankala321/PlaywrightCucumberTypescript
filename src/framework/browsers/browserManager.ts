@@ -1,4 +1,4 @@
-import '../../framework/env/env'; // ✅ Loads .env only ONCE
+import '../../framework/env/env'; 
 
 import { LaunchOptions, chromium, firefox, webkit } from "@playwright/test";
 import fs from 'fs';
@@ -18,16 +18,12 @@ const BROWSER_EDGE = "edge";
 export const invokeBrowser = async () => {
     const browserType = process.env.BROWSER || BROWSER_EDGE;
     const headless = process.env.HEADLESS === 'true';
-    const options: LaunchOptions = {
-        headless
-    };
+    const options: LaunchOptions = { headless };
 
     const customChromePath = process.env.CHROME_PATH;
     switch (browserType) {
         case BROWSER_CHROME:
-            const executablePath = customChromePath && fs.existsSync(customChromePath)
-                ? customChromePath
-                : undefined;
+            const executablePath = customChromePath && fs.existsSync(customChromePath) ? customChromePath : undefined;
             return chromium.launch({ ...options, executablePath });
 
         case BROWSER_EDGE:

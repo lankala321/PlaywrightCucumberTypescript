@@ -14,7 +14,7 @@
     "test": "cross-env ENV=test FORCE_COLOR=0 cucumber-js --config=src/framework/env/cucumber.js",
     "test:smoke": "cross-env ENV=test cucumber-js --config=src/framework/env/cucumber.js --tags='@smoke'",
     "posttest": "cross-env ENV=test npx ts-node src/framework/report/report.ts",
-    "debug:test":  "cross-env ENV=test PWDEBUG=1 DEBUG=pw:api cucumber-js --config=src/framework/env/cucumber.js"
+    "debug:test": "cross-env ENV=test PWDEBUG=1 DEBUG=pw:api cucumber-js --config=src/framework/env/cucumber.js"
   },
   "keywords": [
     "playwright-framwork",
@@ -28,9 +28,9 @@
     "@playwright/test": "^1.53.0",
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^22.15.31",
+    "cross-env": "^7.0.3",
     "dotenv": "^16.5.0",
     "fs-extra": "^11.3.0",
-    "cross-env": "^7.0.3",
     "multiple-cucumber-html-reporter": "^3.9.2",
     "ts-node": "^10.9.2",
     "winston": "^3.17.0"
